@@ -1,0 +1,51 @@
+/* TABLE CONTAINER */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #020617;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* HEADER */
+thead {
+    background: linear-gradient(90deg, #1e293b, #334155);
+}
+
+th {
+    padding: 12px;
+    text-align: left;
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* ROWS */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #1e293b;
+    color: #cbd5f5;
+}
+
+/* ZEBRA STRIPES */
+tbody tr:nth-child(even) {
+    background: #020617;
+}
+
+tbody tr:nth-child(odd) {
+    background: #0f172a;
+}
+
+/* HOVER EFFECT */
+tbody tr:hover {
+    background: #1e293b;
+    transition: 0.2s;
+}
+
+/* NUMBERS STYLE */
+td:nth-child(2) {
+    font-weight: bold;
+    color: #22c55e;
+    letter-spacing: 2px;
+}

@@ -1,0 +1,189 @@
+/* 🌌 BACKGROUND */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #020617, #0f172a);
+    color: white;
+}
+
+/* 📦 MAIN CONTAINER */
+.dashboard {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px;
+}
+
+/* 🔥 TITLE */
+h1 {
+    margin-bottom: 25px;
+    color: #e2e8f0;
+}
+
+/* ---------------- STATS ---------------- */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+/* ---------------- CARD BASE ---------------- */
+.card {
+    background: linear-gradient(145deg, #1e293b, #020617);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
+}
+
+/* HOVER */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* CARD TEXT */
+.card h3 {
+    color: #94a3b8;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ---------------- INFO CARDS ---------------- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.card.info {
+    border-left: 5px solid #22c55e;
+}
+
+.card.info:nth-child(2) { border-left: 5px solid #facc15; }
+.card.info:nth-child(3) { border-left: 5px solid #f43f5e; }
+.card.info:nth-child(4) { border-left: 5px solid #3b82f6; }
+
+/* ---------------- SECTION (MAIN FIX) ---------------- */
+.section {
+    margin-top: 35px;
+    padding: 20px;
+    background: linear-gradient(145deg, #020617, #020617);
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* SECTION TITLE */
+.section h2 {
+    margin-bottom: 15px;
+    color: #e2e8f0;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 8px;
+}
+
+/* ---------------- INPUT ---------------- */
+input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: #020617;
+    color: white;
+    border: 1px solid #334155;
+}
+
+/* ---------------- BUTTON ---------------- */
+button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #22c55e, #4ade80);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-right: 5px;
+}
+
+/* BUTTON HOVER */
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #22c55e;
+}
+
+/* SECONDARY BUTTON (Preview) */
+button:nth-child(2) {
+    background: linear-gradient(45deg, #3b82f6, #60a5fa);
+}
+
+/* ---------------- TABLE ---------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: #020617;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* HEADER */
+th {
+    background: #1e293b;
+    padding: 12px;
+    text-align: left;
+    color: #94a3b8;
+}
+
+/* CELLS */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #334155;
+}
+
+/* ROW HOVER */
+tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* ---------------- CHARITY ADMIN LIST ---------------- */
+#charityAdmin div {
+    background: #020617;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #334155;
+}
+
+/* ---------------- SPACING FIX ---------------- */
+.section + .section {
+    margin-top: 30px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media(max-width: 600px){
+
+    .stats, .cards {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 5px;
+    }
+}

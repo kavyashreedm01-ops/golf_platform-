@@ -1,0 +1,137 @@
+/* 🌈 BACKGROUND */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: white;
+}
+
+/* 🌟 DASHBOARD */
+.dashboard {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* 🧊 CARD BASE */
+.card {
+    background: linear-gradient(145deg, #1e293b, #020617);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+/* ✨ COLOR GLOW EFFECT */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.1), transparent);
+    opacity: 0;
+    transition: 0.3s;
+
+    pointer-events: none; /* ✅ IMPORTANT FIX */
+}
+
+/* HOVER ANIMATION */
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* 🌈 COLORFUL LEFT BORDERS */
+.card:nth-of-type(1) { border-left: 5px solid #22c55e; } /* green */
+.card:nth-of-type(2) { border-left: 5px solid #3b82f6; } /* blue */
+.card:nth-of-type(3) { border-left: 5px solid #f43f5e; } /* pink */
+.card:nth-of-type(4) { border-left: 5px solid #facc15; } /* yellow */
+.card:nth-of-type(5) { border-left: 5px solid #a855f7; } /* purple */
+
+/* 🔥 HEADINGS */
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #e2e8f0;
+}
+
+/* 🎯 TEXT */
+.card p {
+    color: #cbd5f5;
+}
+
+/* 📊 INPUT AREA */
+.score-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* INPUT FIELDS */
+.score-input input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    background: #020617;
+    color: white;
+}
+
+/* 🔘 BUTTON */
+button {
+    background: linear-gradient(45deg, #22c55e, #4ade80);
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    transition: 0.2s;
+}
+
+/* BUTTON HOVER */
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #22c55e;
+}
+
+/* 📋 TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #334155;
+    text-align: left;
+}
+
+th {
+    color: #94a3b8;
+}
+
+/* 🌟 TEXT SIZE */
+td {
+    font-size: 14px;
+}
+
+/* 📱 MOBILE */
+@media(max-width: 600px){
+    .score-input {
+        flex-direction: column;
+    }
+}
+
+/* 🔥 EXTRA SAFETY (ensures inputs always clickable) */
+input, button, select {
+    position: relative;
+    z-index: 2;
+}

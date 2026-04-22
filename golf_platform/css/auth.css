@@ -1,0 +1,221 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* BODY */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+/* MAIN WRAPPER */
+.wrapper {
+    position: relative;
+    width: 900px;
+    height: 550px;
+    background: #111827;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* FORM CONTAINER */
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transition: all 0.6s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* FORMS */
+form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+form h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* INPUTS */
+input {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #1e293b;
+    color: #fff;
+    outline: none;
+}
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+/* BUTTON */
+button {
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 25px;
+    border: none;
+    background: #38bdf8;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+/* GHOST BUTTON */
+button.ghost {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+/* SIGN-IN / SIGN-UP POSITIONS */
+.sign-in {
+    left: 0;
+    z-index: 2;
+}
+
+.sign-up {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none; /* FIX OVERLAP */
+}
+
+/* OVERLAY CONTAINER */
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+/* OVERLAY WITH BACKGROUND IMAGE */
+.overlay {
+    position: relative;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+
+    /* IMAGE + GRADIENT OVERLAY */
+    background:
+        linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)),
+        url('https://img.freepik.com/free-photo/golf-club-with-ball_1160-442.jpg')
+        no-repeat center center/cover;
+
+    color: white;
+}
+
+/* OVERLAY PANELS */
+.overlay-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.overlay-left {
+    left: 0;
+}
+
+.overlay-right {
+    right: 0;
+}
+
+/* TEXT */
+.overlay-panel h2 {
+    font-size: 28px;
+}
+
+.overlay-panel p {
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+/* ACTIVE STATE (SWIPE EFFECT) */
+.wrapper.active .sign-in {
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wrapper.active .sign-up {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    pointer-events: all;
+}
+
+.wrapper.active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.wrapper.active .overlay {
+    transform: translateX(50%);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .wrapper {
+        width: 95%;
+        height: auto;
+        min-height: 600px;
+    }
+
+    .overlay-container {
+        display: none;
+    }
+
+    .form-container {
+        width: 100%;
+        position: relative;
+        transform: none !important;
+        opacity: 1 !important;
+        pointer-events: all !important;
+    }
+}
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 110%;
+    left: 0;
+    background: #333;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 10;
+}

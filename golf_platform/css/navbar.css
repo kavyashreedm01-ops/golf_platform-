@@ -1,0 +1,137 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #0f172a; /* dark modern */
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* NAV LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+/* RIGHT SIDE */
+.auth {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* BUTTONS */
+.btn {
+    background: #38bdf8;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0ea5e9;
+}
+
+/* ACTIVE PLAN BUTTON */
+.active-plan {
+    background: #22c55e;
+    color: white;
+}
+
+/* LOGOUT */
+.logout-btn {
+    background: #ef4444;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.logout-btn:hover {
+    background: #dc2626;
+}
+
+/* MOBILE (basic responsive) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}
+.active-plan-label {
+    background: #22c55e;
+    color: black;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.btn {
+    background: #007bff;
+    color: #fff !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Optional: login specific style */
+.login-btn {
+    background: #28a745;
+}
+
+.login-btn:hover {
+    background: #1e7e34;
+}
+.admin-badge {
+    background: #111;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.logout-btn {
+    margin-left: 10px;
+}
